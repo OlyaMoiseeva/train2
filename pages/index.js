@@ -8,6 +8,7 @@ export default function Home() {
     {to: 'c10885', title: 'Рощино'},
     {to: 'c969', title: 'Выборг'}
   ]
+  const aas = process.env.BACKEND_URL
 
   return (
     <div className="container">
@@ -18,6 +19,7 @@ export default function Home() {
               <Place
                 to={to}
                 key={to.to}
+                aas={aas}
               />
             )
           })}
