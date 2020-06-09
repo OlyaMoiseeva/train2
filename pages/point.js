@@ -2,6 +2,7 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 
 import Time from '../components/Time'
+import Layout from '../components/layouts/layout'
 
 
 const point = () => {
@@ -29,22 +30,20 @@ const point = () => {
   
 
   return (
-    <div className="container">
-      <main>
-        <span>{ data.search.from.title} -</span>
-        <span> { data.search.to.title}</span>
-        <ul>
-          {data.segments.map(time => {
-            return (
-              <Time
-                time={time}
-                key={time.thread.uid}
-              />
-            )
-          })}
-        </ul>
-      </main>
-    </div>
+    <Layout>
+      <span>{ data.search.from.title} -</span>
+      <span> { data.search.to.title}</span>
+      <ul>
+        {data.segments.map(time => {
+          return (
+            <Time
+              time={time}
+              key={time.thread.uid}
+            />
+          )
+        })}
+      </ul>
+    </Layout>
 
   )
 }

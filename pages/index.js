@@ -1,5 +1,7 @@
 import useSWR from 'swr'
-import Place from '../components/Place'
+
+import List from '../components/List'
+import Layout from '../components/layouts/layout'
 
 export default function Home() {
 
@@ -8,23 +10,14 @@ export default function Home() {
     {to: 'c10885', title: 'Рощино'},
     {to: 'c969', title: 'Выборг'}
   ]
-  const aas = process.env.BACKEND_URL
+  const path = process.env.BACKEND_URL
 
   return (
-    <div className="container">
-      <main>
-        <ul>
-          {to.map(to => {
-            return (
-              <Place
-                to={to}
-                key={to.to}
-                aas={aas}
-              />
-            )
-          })}
-        </ul>
-      </main>
-    </div>
+    <Layout>
+      <List
+        to={to}
+        path={path}
+      />
+    </Layout>
   )
 }
