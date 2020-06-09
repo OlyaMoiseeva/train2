@@ -12,7 +12,7 @@ export default function Place(props) {
   return (
     <div>
       <span onClick={ () => handler(props.to.to) }>{props.to.title}</span>
-      <div><Link href={{ pathname: '/point', query: { to: props.to.to } }} as={ props.aas + '/point?to=' + props.to.to }><a>{props.to.title}</a></Link></div>
+      <div><Link href={{ pathname: '/point', query: { to: props.to.to } }} as={ props.path + '/point?to=' + props.to.to }><a>{props.to.title}</a></Link></div>
     </div>
   )
 }
